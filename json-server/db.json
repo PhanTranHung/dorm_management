@@ -1,0 +1,18 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Bộ trưởng Y tế kêu gọi 'hãy nhập cảnh chính ngạch'",
+      "content": "Bộ trưởng Y tế Nguyễn Thanh Long cho biết hiện mỗi ngày phát hiện 100-150 trường hợp nhập cảnh trái phép, nguy cơ mang theo nCoV xâm nhập nội địa phá tan cái Tết an lành."
+    },
+    {
+      "id": 2,
+      "title": "Giá nhà bị đẩy lên cao như thế nào?",
+      "content": "Lúc chuẩn bị đầu tư dự án, giá nhà dựa trên yếu tố cơ sở nhưng khi thi công, mở bán giá thị trường đã bị đội lên."
+    }
+  ],
+  "students": [
+    { "id": 1, "name": "Phan Tran Hung", "class": "17IT1s" },
+    { "id": 2, "name": "Hung Phan", "class": "I dont know" }
+  ]
+}
