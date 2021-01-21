@@ -6,11 +6,12 @@ const axios = require('axios').default;
 
 // console.log(serverURL.toString());
 
-const serverURL = `http://${process.env.JSON_SERVER_HOSTNAME}:${process.env.JSON_SERVER_PORT}`;
+const serverURL = `
+  http://${process.env.JSON_SERVER_HOSTNAME || 'localhost'}:
+  ${process.env.JSON_SERVER_PORT || 3001}`;
+
 console.log('serverURL', serverURL);
 
-const a = axios.create({
+module.exports = axios.create({
   baseURL: serverURL,
 });
-
-module.exports = a;

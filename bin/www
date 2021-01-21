@@ -20,7 +20,7 @@ const JsonServer = require('../json-server');
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const jsonServer = JsonServer(process.env.JSON_SERVER_PORT);
+const jsonServer = JsonServer(process.env.JSON_SERVER_PORT || '3001');
 
 /**
  * Create HTTP server.
