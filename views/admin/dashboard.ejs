@@ -119,7 +119,7 @@
             Lượng điện - nước sử dụng hàng tháng
           </div>
           <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="40"></canvas>
+            <canvas id="bill" width="100%" height="40"></canvas>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
         <div class="card mb-4">
           <div class="card-header">
             <i class="fas fa-chart-area mr-1"></i>
-            Lượng sinh viên đăng ký mới hàng tháng
+            Số lượng sinh viên đăng ký mới
           </div>
           <div class="card-body">
             <canvas id="myBarChart" width="100%" height="40"></canvas>
@@ -742,11 +742,72 @@
     },
   };
 
+  const billConfig = {
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'Số điện',
+          borderColor: color.red,
+          backgroundColor: color.red,
+          fill: false,
+          data: [96, 72, 53, 98, 105, 110, 86],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Số nước',
+          borderColor: color.blue,
+          backgroundColor: color.blue,
+          fill: false,
+          data: [25, 30, 26, 28, 32, 31, 20],
+          yAxisID: 'y-axis-1',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      hoverMode: 'index',
+      stacked: false,
+      title: {
+        display: true,
+        text: 'Lượng điện - nước đã sử dụng',
+      },
+      legend: {
+        display: true,
+        position: 'top',
+      },
+      scales: {
+        yAxes: [
+          {
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'left',
+            id: 'y-axis-1',
+          },
+          // {
+          //   type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+          //   display: true,
+          //   position: 'right',
+          //   id: 'y-axis-2',
+
+          //   // grid line settings
+          //   gridLines: {
+          //     drawOnChartArea: false, // only want the grid lines for one axis to show up
+          //   },
+          // },
+        ],
+      },
+    },
+  };
+
   window.onload = function () {
     var ctx = document.getElementById('myEnergyChartCircle').getContext('2d');
     window.energyChart = new Chart(ctx, energyConfig);
 
     var ctx = document.getElementById('myWaterChartCircle').getContext('2d');
     window.waterChart = new Chart(ctx, waterConfig);
+
+    var ctx = document.getElementById('bill').getContext('2d');
+    window.myLine = Chart.Line(ctx, billConfig);
   };
 </script>
