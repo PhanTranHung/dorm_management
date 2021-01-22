@@ -8,238 +8,27 @@ router.get('/bill', function (req, res, next) {
 
 router.get('/rooms', function (req, res, next) {
   const dorm = {
-    floors: [
-      {
-        id: 1,
-        rooms: [
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 8,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 7,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 6,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-        ],
-      },
-      {
-        id: 1,
-        rooms: [
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 8,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 7,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 6,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-        ],
-      },
-      {
-        id: 1,
-        rooms: [
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 8,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 7,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 6,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-        ],
-      },
-      {
-        id: 1,
-        rooms: [
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 8,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 7,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 6,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-        ],
-      },
-      {
-        id: 1,
-        rooms: [
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 8,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 7,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 6,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-          {
-            id: 101,
-            number: 0,
-            total: 8,
-          },
-        ],
-      },
-    ],
+    block: [1, 2, 3].map((block) => ({
+      id: block,
+      floor: [1, 2, 3, 4, 5].map((flr) => ({
+        id: flr,
+        room: [1, 2, 3, 4, 5, 6, 7, 8].map((r) => ({
+          id: `${flr}0${r}`,
+          number: ((min, max) => Math.floor(Math.random() * (max - min) + min))(
+            0,
+            9,
+          ),
+          total: 8,
+          payment: ((min, max) =>
+            Math.floor(Math.random() * (max - min) + min))(0, 11),
+        })),
+      })),
+    })),
   };
 
   res.render('admin/index', {
     page: 'rooms',
-    data: { rooms: dorm },
+    data: { dorm },
   });
 });
 
