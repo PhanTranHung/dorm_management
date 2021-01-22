@@ -91,7 +91,9 @@
                     <div
                       class="f-item b-primary-focus flex-fill rounded <% if (!room.number) { %> bg-disabled <% } else if (!room.payment) { %> bg-danger <% } else { %> bg-light <% } %>"
                     >
-                      <a href="/admin/room/<%= floor.id + '-' +room.id %>">
+                      <a
+                        href="/admin/rooms/<%= block.id + '-' + floor.id + '-' +room.id %>"
+                      >
                         <div class="box">
                           <div class="box-category">
                             <span class="box-title">

@@ -4,4 +4,5 @@
     "emmet.includeLanguages": {
         "ejs": "html",
     },
+    "python.pythonPath": "C:\\Users\\namlq\\Anaconda3\\python.exe",
 }

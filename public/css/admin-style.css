@@ -99,3 +99,36 @@ a:hover {
 .nav-pills .show > .nav-link {
   font-weight: bold;
 }
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 19px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  margin-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ' attr(icon-url);
+  background: inherit;
+  background-position: center;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #fd7272;
+  left: -10px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  z-index: 400;
+}
