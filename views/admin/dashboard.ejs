@@ -42,7 +42,7 @@
               </div> -->
               <div class="col-12">
                 <div class="numbers">
-                  <p class="card-category">Hóa đơn điện-nước chưa thanh toán</p>
+                  <p class="card-category">Điện-nước chưa thanh toán</p>
                   <p class="card-title">164</p>
                 </div>
               </div>
@@ -131,15 +131,17 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-6">
+              <div class="col">
                 <canvas
+                  class="canvas-pie"
                   id="myEnergyChartCircle"
                   width="100%"
                   height="40"
                 ></canvas>
               </div>
-              <div class="col-6">
+              <div class="col">
                 <canvas
+                  class="canvas-pie"
                   id="myWaterChartCircle"
                   width="100%"
                   height="40"
@@ -693,6 +695,7 @@
     options: {
       responsive: true,
       legend: {
+        display: true,
         position: 'left',
         align: 'center',
       },
@@ -704,6 +707,7 @@
         animateScale: true,
         animateRotate: true,
       },
+      maintainAspectRatio: false,
     },
   };
 
@@ -734,6 +738,7 @@
         animateScale: true,
         animateRotate: true,
       },
+      maintainAspectRatio: false,
     },
   };
 

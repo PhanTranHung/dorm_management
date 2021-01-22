@@ -41,3 +41,15 @@
 .box-body {
   padding: 0 15px 10px 15px;
 }
+
+.canvas-pie {
+  width: 100% !important;
+  height: 14vw !important;
+}
+
+.row-line {
+  position: relative;
+}
+.col-item {
+  position: relative;
+}
