@@ -1,6 +1,8 @@
 {
     "editor.formatOnSave": true,
+    "editor.tabSize": 4,
     "emmet.includeLanguages": {
         "ejs": "html",
     },
+    "python.pythonPath": "C:\\Users\\namlq\\Anaconda3\\python.exe",
 }

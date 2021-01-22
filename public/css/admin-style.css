@@ -1,0 +1,134 @@
+.f-item {
+  margin: 5px;
+  border: solid 1px rgb(210, 210, 210);
+  cursor: pointer;
+}
+.f-item:last-of-type {
+  margin-right: unset;
+}
+.f-item:first-of-type {
+  margin-left: unset;
+}
+
+.f-line {
+  margin-bottom: 1rem;
+}
+
+/* .f-line:hover {
+  background-color: rgb(234, 234, 234);
+} */
+
+.b-primary-focus {
+  /* border: 1px solid rgb(199, 199, 199); */
+}
+
+.b-primary-focus:hover {
+  border: 1px solid rgb(115 115 115);
+}
+
+.f-title {
+  font-weight: bold;
+}
+
+.bg-disabled {
+  background-color: rgb(203, 203, 203);
+}
+
+.box hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.box-title-large {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.box-title {
+  font-size: 16px;
+}
+
+.box-category {
+  padding: 10px 15px 0 15px;
+}
+
+.box-body {
+  padding: 0 15px 10px 15px;
+}
+
+.canvas-pie {
+  width: 100% !important;
+  height: 14vw !important;
+}
+
+.row-line {
+  position: relative;
+}
+.col-item {
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bb-primary::after {
+  content: ' ';
+  border-bottom: #03a9f4 solid 1px;
+  position: absolute;
+  width: 100%;
+  top: 103px;
+  z-index: 1;
+  left: 0;
+  margin: auto;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: white;
+  background-color: #03a9f4;
+  border-color: #03a9f4 #03a9f4 #03a9f4;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  font-weight: bold;
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 19px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  margin-left: 20px;
+}
+ul.timeline > li:before {
+  content: ' ' attr(icon-url);
+  background: inherit;
+  background-position: center;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #fd7272;
+  left: -10px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  z-index: 400;
+}

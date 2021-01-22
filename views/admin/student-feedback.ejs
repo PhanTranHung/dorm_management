@@ -1,0 +1,320 @@
+<div class="container-fluid">
+  <h1 class="mt-4">Phản hồi</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item active">Student feedback</li>
+  </ol>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table mr-1"></i>
+      Phản hồi
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Message</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Trần Thành Nam</td>
+              <td>ttnam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lương Thị Thúy An</td>
+              <td>lttan@gmail.com</td>
+              <td>Mình có ý kiến về cơ sở vật chất...</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Bùi Quỳnh Anh</td>
+              <td>bqanh@gmail.com</td>
+              <td>Phòng 3.310 bị hư bóng đèn</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Bùi Công Duy</td>
+              <td>bcduy@gmail.com</td>
+              <td>tiếng ồn ban đêm trên tầng 2</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Vũ Hà Ngân</td>
+              <td>tvhngan@gmail.com</td>
+              <td>hành lang tầng 4 rác không ai dọn</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Vũ Hiểu Trung</td>
+              <td>vhtrung@gmail.com</td>
+              <td>Sinh viên tầng 3 thiếu ý thức</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lê Vi Phương Trinh</td>
+              <td>lvptrinh@gmail.com</td>
+              <td>khuya còn làm ồn trên tầng 4</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lại Hương Thảo</td>
+              <td>lhthao@gmail.com</td>
+              <td>phát hiện nấu ăn trong phòng ở tầng 3</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Nguyễn Hồng Phúc</td>
+              <td>nhphuc@gmail.com</td>
+              <td>Sinh viên về khuya trèo rào vào nhiều</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Đỗ Gia Hân</td>
+              <td>dghan@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Nguyễn Hoàng Lâm</td>
+              <td>nhlam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Vũ Hà Ngân</td>
+              <td>tvhangan@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Đức Nam</td>
+              <td>tdnam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="gridSystemModalLabel"
+  id="feedback"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Feedback</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form>
+            <div class="row">
+              <div class="col">Sinh viên: Bùi Công Duy</div>
+              <div class="col">E-mail: ttnam@gmail.com</div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Message: Tiếng ồn ban đêm trên tầng 2</div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">
+                <textarea
+                  name=""
+                  id=""
+                  cols="50%"
+                  rows="3"
+                  placeholder="Trả lời"
+                ></textarea>
+              </div>
+            </div>
+            <br />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Hủy
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#feedback"
+          >
+            Trả lời
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

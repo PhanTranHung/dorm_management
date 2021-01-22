@@ -1,0 +1,638 @@
+<div class="container-fluid">
+  <h1 class="mt-4">Dashboard</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Dashboard</li>
+  </ol>
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats bg-success">
+          <div class="card-body">
+            <div class="row">
+              <!-- <div class="col-2">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-globe text-warning"></i>
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="numbers">
+                  <p class="card-category">Đăng ký mới</p>
+                  <p class="card-title">102</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <!-- <hr />
+            <div class="stats">
+              <i class="fa fa-refresh"></i>
+              Cập nhật
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats bg-info">
+          <div class="card-body">
+            <div class="row">
+              <!-- <div class="col-2">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-money-coins text-success"></i>
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="numbers">
+                  <p class="card-category">Điện-nước chưa thanh toán</p>
+                  <p class="card-title">164</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <!-- <hr />
+            <div class="stats">
+              <i class="fa fa-calendar-o"></i>
+              Cập nhật
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats bg-danger">
+          <div class="card-body">
+            <div class="row">
+              <!-- <div class="col-2">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-vector text-danger"></i>
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="numbers">
+                  <p class="card-category">Hợp đồng chưa thanh toán</p>
+                  <p class="card-title">23</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <!-- <hr />
+            <div class="stats">
+              <i class="fa fa-clock-o"></i>
+              Cập nhật
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats bg-warning">
+          <div class="card-body">
+            <div class="row">
+              <!-- <div class="col-2">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-favourite-28 text-primary"></i>
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="numbers">
+                  <p class="card-category">Phản hồi</p>
+                  <p class="card-title">15</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <!-- <hr />
+            <div class="stats">
+              <i class="fa fa-refresh"></i>
+              Update now
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-area mr-1"></i>
+            Lượng điện - nước sử dụng hàng tháng
+          </div>
+          <div class="card-body">
+            <canvas id="bill" width="100%" height="40"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-bar mr-1"></i>
+            Lượng điện - nước sử dụng tháng này
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <canvas
+                  class="canvas-pie"
+                  id="myEnergyChartCircle"
+                  width="100%"
+                  height="40"
+                ></canvas>
+              </div>
+              <div class="col">
+                <canvas
+                  class="canvas-pie"
+                  id="myWaterChartCircle"
+                  width="100%"
+                  height="40"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-area mr-1"></i>
+            Số lượng sinh viên đăng ký mới
+          </div>
+          <div class="card-body">
+            <canvas id="myBarChart" width="100%" height="40"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-bar mr-1"></i>
+            Quê quán
+          </div>
+          <div class="card-body">
+            <canvas id="" width="100%" height="40"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Danh sách phản hồi
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Message</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Trần Thành Nam</td>
+              <td>ttnam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lương Thị Thúy An</td>
+              <td>lttan@gmail.com</td>
+              <td>Mình có ý kiến về cơ sở vật chất...</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Bùi Quỳnh Anh</td>
+              <td>bqanh@gmail.com</td>
+              <td>Phòng 3.310 bị hư bóng đèn</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Bùi Công Duy</td>
+              <td>bcduy@gmail.com</td>
+              <td>tiếng ồn ban đêm trên tầng 2</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Vũ Hà Ngân</td>
+              <td>tvhngan@gmail.com</td>
+              <td>hành lang tầng 4 rác không ai dọn</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Vũ Hiểu Trung</td>
+              <td>vhtrung@gmail.com</td>
+              <td>Sinh viên tầng 3 thiếu ý thức</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lê Vi Phương Trinh</td>
+              <td>lvptrinh@gmail.com</td>
+              <td>khuya còn làm ồn trên tầng 4</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lại Hương Thảo</td>
+              <td>lhthao@gmail.com</td>
+              <td>phát hiện nấu ăn trong phòng ở tầng 3</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Nguyễn Hồng Phúc</td>
+              <td>nhphuc@gmail.com</td>
+              <td>Sinh viên về khuya trèo rào vào nhiều</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Đỗ Gia Hân</td>
+              <td>dghan@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Nguyễn Hoàng Lâm</td>
+              <td>nhlam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Vũ Hà Ngân</td>
+              <td>tvhangan@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Trần Đức Nam</td>
+              <td>tdnam@gmail.com</td>
+              <td>hello</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#feedback"
+                >
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="gridSystemModalLabel"
+  id="feedback"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Feedback</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form>
+            <div class="row">
+              <div class="col">Sinh viên: Bùi Công Duy</div>
+              <div class="col">E-mail: ttnam@gmail.com</div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Message: Tiếng ồn ban đêm trên tầng 2</div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">
+                <textarea
+                  name=""
+                  id=""
+                  cols="50%"
+                  rows="3"
+                  placeholder="Trả lời"
+                ></textarea>
+              </div>
+            </div>
+            <br />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Hủy
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#feedback"
+          >
+            Trả lời
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var randomScalingFactor = function () {
+    return Math.round(Math.random() * 100);
+  };
+
+  const color = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)',
+  };
+
+  var energyConfig = {
+    type: 'doughnut',
+    data: {
+      datasets: [
+        {
+          data: [1286, 1506, 921],
+          backgroundColor: [color.red, color.green, color.blue],
+          label: 'Dataset 1',
+        },
+      ],
+      labels: ['Khu 1', 'Khu 2', 'Khu 3'],
+    },
+    options: {
+      responsive: true,
+      legend: {
+        display: true,
+        position: 'left',
+        align: 'center',
+      },
+      title: {
+        display: true,
+        text: 'Lượng điện sử dụng',
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+      },
+      maintainAspectRatio: false,
+    },
+  };
+
+  var waterConfig = {
+    type: 'doughnut',
+    data: {
+      datasets: [
+        {
+          data: [925, 869, 851],
+          backgroundColor: [color.red, color.green, color.blue],
+          label: 'Dataset 1',
+        },
+      ],
+      labels: ['Khu 1', 'Khu 2', 'Khu 3'],
+    },
+    options: {
+      responsive: true,
+      legend: {
+        display: false,
+        position: 'left',
+        align: 'center',
+      },
+      title: {
+        display: true,
+        text: 'Lượng nước sử dụng',
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+      },
+      maintainAspectRatio: false,
+    },
+  };
+
+  const billConfig = {
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'Số điện',
+          borderColor: color.red,
+          backgroundColor: color.red,
+          fill: false,
+          data: [96, 72, 53, 98, 105, 110, 86],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Số nước',
+          borderColor: color.blue,
+          backgroundColor: color.blue,
+          fill: false,
+          data: [25, 30, 26, 28, 32, 31, 20],
+          yAxisID: 'y-axis-1',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      hoverMode: 'index',
+      stacked: false,
+      title: {
+        display: true,
+        text: 'Lượng điện - nước đã sử dụng',
+      },
+      legend: {
+        display: true,
+        position: 'top',
+      },
+      scales: {
+        yAxes: [
+          {
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'left',
+            id: 'y-axis-1',
+          },
+          // {
+          //   type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+          //   display: true,
+          //   position: 'right',
+          //   id: 'y-axis-2',
+
+          //   // grid line settings
+          //   gridLines: {
+          //     drawOnChartArea: false, // only want the grid lines for one axis to show up
+          //   },
+          // },
+        ],
+      },
+    },
+  };
+
+  window.onload = function () {
+    var ctx = document.getElementById('myEnergyChartCircle').getContext('2d');
+    window.energyChart = new Chart(ctx, energyConfig);
+
+    var ctx = document.getElementById('myWaterChartCircle').getContext('2d');
+    window.waterChart = new Chart(ctx, waterConfig);
+
+    var ctx = document.getElementById('bill').getContext('2d');
+    window.myLine = Chart.Line(ctx, billConfig);
+  };
+</script>
