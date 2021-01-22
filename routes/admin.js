@@ -7,7 +7,240 @@ router.get('/bill', function (req, res, next) {
 });
 
 router.get('/rooms', function (req, res, next) {
-  res.render('admin/index', { page: 'rooms' });
+  const dorm = {
+    floors: [
+      {
+        id: 1,
+        rooms: [
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 8,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 7,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 6,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+        ],
+      },
+      {
+        id: 1,
+        rooms: [
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 8,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 7,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 6,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+        ],
+      },
+      {
+        id: 1,
+        rooms: [
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 8,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 7,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 6,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+        ],
+      },
+      {
+        id: 1,
+        rooms: [
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 8,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 7,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 6,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+        ],
+      },
+      {
+        id: 1,
+        rooms: [
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 8,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 7,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 6,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+          {
+            id: 101,
+            number: 0,
+            total: 8,
+          },
+        ],
+      },
+    ],
+  };
+
+  res.render('admin/index', {
+    page: 'rooms',
+    data: { rooms: dorm },
+  });
 });
 
 router.get('/student-feedback', function (req, res, next) {
