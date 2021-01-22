@@ -9,6 +9,15 @@ router.get('/news/:id', async function (req, res, next) {
   res.render(userpath, { page: 'news', data });
 });
 
+router.get('/about', async function (req, res, next) {
+  res.render(userpath, { page: 'about' });
+});
+
+
+router.get('/signup', async function (req, res, next) {
+  res.render(userpath, { page: 'signup' });
+});
+
 router.get('/news', async function (req, res, next) {
   const data = await newsService.getAllNews();
   res.render(userpath, { page: 'news', data });
