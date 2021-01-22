@@ -243,6 +243,14 @@ router.get('/rooms', function (req, res, next) {
   });
 });
 
+router.get('/administrators', function (req, res, next) {
+  res.render('admin/index', { page: 'administrators' });
+});
+
+router.get('/student-register', function (req, res, next) {
+  res.render('admin/index', { page: 'student-register' });
+});
+
 router.get('/student-feedback', function (req, res, next) {
   res.render('admin/index', { page: 'student-feedback' });
 });
