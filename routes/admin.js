@@ -6,6 +6,12 @@ router.get('/bill', function (req, res, next) {
   res.render('admin/index', { page: 'bill' });
 });
 
+router.get('/rooms/:id', function (req, res, next) {
+  res.render('admin/index', {
+    page: 'room-detail',
+  });
+});
+
 router.get('/rooms', function (req, res, next) {
   const dorm = {
     block: [1, 2, 3].map((block) => ({

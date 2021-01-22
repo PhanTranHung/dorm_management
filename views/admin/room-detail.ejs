@@ -1,0 +1,199 @@
+<div class="layout-content">
+  <div class="container-fluid">
+    <h1 class="mt-4">Danh sách phòng</h1>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/admin/rooms">Room</a></li>
+      <li class="breadcrumb-item active">Detail</li>
+    </ol>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-bar mr-1"></i>
+            Lượng điện - nước sử dụng tháng này
+          </div>
+          <div class="card-body">
+            <canvas id="bill"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-bar mr-1"></i>
+            Hóa đơn
+          </div>
+          <div class="card-body">
+            <div class="scroll-area"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Danh sách sinh viên
+      </div>
+
+      <div class="card-body">
+        <div class="container-fluid mt-2 mb-3"></div>
+
+        <div class="container-fluid">
+          <ul class="timeline">
+            <li style="background-image: url(/images/baotram.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Phan Trần Hùng</a>
+                <a href="#" class="float-right">21 March, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT013</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">158996248</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">0123546987</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+            <li style="background-image: url(/images/anhvau.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Trần Thành Nam</a>
+                <a href="#" class="float-right">4 March, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT011</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">258642685</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">1900100CÓ</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+            <li style="background-image: url(/images/bacba.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Đỗ Phước Thiện</a>
+                <a href="#" class="float-right">1 April, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT021</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">569821456</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">012359648752</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+            <li style="background-image: url(/images/beMike.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Bé Mike</a>
+                <a href="#" class="float-right">1 April, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT021</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">569821456</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">012359648752</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+            <li style="background-image: url(/images/sontung.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Sơn Tùng</a>
+                <a href="#" class="float-right">1 April, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT075</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">785312648</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">0953246821</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+            <li style="background-image: url(/images/brother.png)">
+              <div class="bg-white">
+                <a class="h4" href="#">Anh Trai Sơn Tùng</a>
+                <a href="#" class="float-right">1 April, 2014</a>
+                <div class="pl-4">
+                  <dl class="row">
+                    <dt class="col-3">Mã sinh viên:</dt>
+                    <dd class="col-9">17IT069</dd>
+                    <dt class="col-3">CMND/CCCD:</dt>
+                    <dd class="col-9">123548265</dd>
+                    <dt class="col-3">Số điện thoại:</dt>
+                    <dd class="col-9">0932568485</dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const color = { red: 'rgb(255, 99, 132)', blue: 'rgb(54, 162, 235)' };
+
+  var lineChartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'Số điện',
+        borderColor: color.red,
+        backgroundColor: color.red,
+        fill: false,
+        data: [96, 72, 53, 98, 105, 110, 86],
+        yAxisID: 'y-axis-1',
+      },
+      {
+        label: 'Số nước',
+        borderColor: color.blue,
+        backgroundColor: color.blue,
+        fill: false,
+        data: [25, 30, 26, 28, 32, 31, 20],
+        yAxisID: 'y-axis-1',
+      },
+    ],
+  };
+
+  window.onload = function () {
+    var ctx = document.getElementById('bill').getContext('2d');
+    window.myLine = Chart.Line(ctx, {
+      data: lineChartData,
+      options: {
+        responsive: true,
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: false,
+          text: 'Lượng điện - nước đã sử dụng',
+        },
+        scales: {
+          yAxes: [
+            {
+              type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+              display: true,
+              position: 'left',
+              id: 'y-axis-1',
+            },
+          ],
+        },
+      },
+    });
+  };
+</script>
