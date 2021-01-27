@@ -159,6 +159,7 @@ body {
 }
 
 .card {
+  height: calc(100% - 1.5rem);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -178,7 +179,7 @@ body {
 .vertical-timeline {
   width: 100%;
   position: relative;
-  padding: 0 0 1rem;
+  /* padding: 0 0 1rem; */
 }
 
 .vertical-timeline::before {
@@ -243,7 +244,7 @@ body {
 .vertical-timeline-element-content .timeline-title {
   font-size: 0.8rem;
   text-transform: uppercase;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.2rem;
   padding: 2px 0 0;
   font-weight: bold;
 }
@@ -264,4 +265,14 @@ body {
   content: '';
   display: table;
   clear: both;
+}
+
+.timeline-content {
+  margin-bottom: 0.8rem;
+}
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

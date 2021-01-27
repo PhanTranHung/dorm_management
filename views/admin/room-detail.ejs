@@ -1,6 +1,6 @@
 <div class="layout-content">
   <div class="container-fluid">
-    <h1 class="mt-4">Danh sách phòng</h1>
+    <h1 class="mt-4">Danh sách sinh viên phòng <%= data.roomId %></h1>
     <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="/admin/rooms">Room</a></li>
@@ -14,7 +14,7 @@
             <i class="fas fa-chart-bar mr-1"></i>
             Lượng điện - nước sử dụng tháng này
           </div>
-          <div class="card-body">
+          <div class="card-body f-center">
             <canvas id="bill"></canvas>
           </div>
         </div>
@@ -25,7 +25,7 @@
             <i class="fas fa-chart-bar mr-1"></i>
             Hóa đơn chưa thanh toán
           </div>
-          <div class="card-body">
+          <div class="card-body f-center">
             <div class="scroll-area">
               <div
                 class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column"
@@ -33,20 +33,32 @@
                 <div class="vertical-timeline-item vertical-timeline-element">
                   <div>
                     <span class="vertical-timeline-element-icon bounce-in">
-                      <i class="badge badge-dot badge-dot-xl badge-warning">
+                      <i class="badge badge-dot badge-dot-xl badge-success">
                       </i>
                     </span>
                     <div class="vertical-timeline-element-content bounce-in">
-                      <h4 class="timeline-title">
-                        Phan Trần Hùng nộp
-                        <b class="text-danger">16/12/2020 11:00 AM</b>
+                      <h4 class="timeline-title text-success">
+                        Phan Trần Hùng nộp 16/12/2020 11:00 AM
                       </h4>
-                      Điện
-                      <span class="text-success">96</span>
-                      /
-                      <span class="text-warning">236 VND </span>
-                      Nước
-                      <span class="text-success">5:00 PM</span>
+                      <div class="timeline-content">
+                        <div class="row">
+                          <div class="col">
+                            Điện
+                            <span class="text-success">96</span>
+                            =>
+                            <span class="text-warning">236 VND </span>
+                          </div>
+                          <div class="col">
+                            Nước
+                            <span class="text-primary">28</span>
+                            =>
+                            <span class="text-warning">120 VND </span>
+                          </div>
+                        </div>
+                        <div>
+                          Tổng: <span class="text-warning">356.000 VND</span>
+                        </div>
+                      </div>
                       <span class="vertical-timeline-element-date">
                         12/2020
                       </span>
@@ -59,15 +71,28 @@
                       <i class="badge badge-dot badge-dot-xl badge-danger"> </i>
                     </span>
                     <div class="vertical-timeline-element-content bounce-in">
-                      <h4 class="timeline-title">
-                        Discussion with team about new product launch
-                      </h4>
-                      <p>
-                        meeting with team mates about the launch of new product.
-                        and tell them about new features
-                      </p>
+                      <h4 class="timeline-title text-danger">Trễn 32 ngày</h4>
+                      <div class="timeline-content">
+                        <div class="row">
+                          <div class="col">
+                            Điện
+                            <span class="text-success">98</span>
+                            =>
+                            <span class="text-warning">241 VND </span>
+                          </div>
+                          <div class="col">
+                            Nước
+                            <span class="text-primary">31</span>
+                            =>
+                            <span class="text-warning">172 VND </span>
+                          </div>
+                        </div>
+                        <div>
+                          Tổng: <span class="text-warning">413.214 VND</span>
+                        </div>
+                      </div>
                       <span class="vertical-timeline-element-date"
-                        >6:00 PM</span
+                        >11/2020</span
                       >
                     </div>
                   </div>
@@ -75,119 +100,70 @@
                 <div class="vertical-timeline-item vertical-timeline-element">
                   <div>
                     <span class="vertical-timeline-element-icon bounce-in">
-                      <i class="badge badge-dot badge-dot-xl badge-warning">
+                      <i class="badge badge-dot badge-dot-xl badge-secondary">
                       </i>
                     </span>
                     <div class="vertical-timeline-element-content bounce-in">
-                      <p>
-                        Another conference call today, at
-                        <b class="text-danger">11:00 AM</b>
-                      </p>
-                      <p>
-                        Yet another one, at
-                        <span class="text-success">1:00 PM</span>
-                      </p>
+                      <h4 class="timeline-title text-secondary">
+                        Phòng không sử dụng
+                      </h4>
+                      <div class="timeline-content">
+                        <div class="row">
+                          <div class="col">
+                            Điện
+                            <span class="text-success">1</span>
+                            =>
+                            <span class="text-warning">6 VND </span>
+                          </div>
+                          <div class="col">
+                            Nước
+                            <span class="text-primary">0</span>
+                            =>
+                            <span class="text-warning">0 VND </span>
+                          </div>
+                        </div>
+                        <div>
+                          Tổng: <span class="text-warning">6.000 VND</span>
+                        </div>
+                      </div>
+                      <span class="vertical-timeline-element-date"
+                        >10/2020</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-timeline-item vertical-timeline-element">
+                  <div>
+                    <span class="vertical-timeline-element-icon bounce-in">
+                      <i class="badge badge-dot badge-dot-xl badge-success">
+                      </i>
+                    </span>
+                    <div class="vertical-timeline-element-content bounce-in">
+                      <h4 class="timeline-title text-success">
+                        Phan Trần Hùng nộp 11/2020 12:00 AM
+                      </h4>
+                      <div class="timeline-content">
+                        <div class="row">
+                          <div class="col">
+                            Điện
+                            <span class="text-success">80</span>
+                            =>
+                            <span class="text-warning">212 VND </span>
+                          </div>
+                          <div class="col">
+                            Nước
+                            <span class="text-primary">25</span>
+                            =>
+                            <span class="text-warning">112 VND </span>
+                          </div>
+                        </div>
+                        <div>
+                          Tổng: <span class="text-warning">324.365 VND</span>
+                        </div>
+                      </div>
                       <span class="vertical-timeline-element-date"
                         >12:25 PM</span
                       >
-                    </div>
-                    <div
-                      class="vertical-timeline-item vertical-timeline-element"
-                    >
-                      <div>
-                        <span class="vertical-timeline-element-icon bounce-in">
-                          <i class="badge badge-dot badge-dot-xl badge-warning">
-                          </i>
-                        </span>
-                        <div
-                          class="vertical-timeline-element-content bounce-in"
-                        >
-                          <p>
-                            Another conference call today, at
-                            <b class="text-danger">11:00 AM</b>
-                          </p>
-                          <p>
-                            Yet another one, at
-                            <span class="text-success">1:00 PM</span>
-                          </p>
-                          <span class="vertical-timeline-element-date"
-                            >12:25 PM</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="vertical-timeline-item vertical-timeline-element"
-                    >
-                      <div>
-                        <span class="vertical-timeline-element-icon bounce-in">
-                          <i class="badge badge-dot badge-dot-xl badge-warning">
-                          </i>
-                        </span>
-                        <div
-                          class="vertical-timeline-element-content bounce-in"
-                        >
-                          <p>
-                            Another meeting with UK client today, at
-                            <b class="text-danger">3:00 PM</b>
-                          </p>
-                          <p>
-                            Yet another one, at
-                            <span class="text-success">5:00 PM</span>
-                          </p>
-                          <span class="vertical-timeline-element-date"
-                            >12:25 PM</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="vertical-timeline-item vertical-timeline-element"
-                    >
-                      <div>
-                        <span class="vertical-timeline-element-icon bounce-in">
-                          <i class="badge badge-dot badge-dot-xl badge-danger">
-                          </i>
-                        </span>
-                        <div
-                          class="vertical-timeline-element-content bounce-in"
-                        >
-                          <h4 class="timeline-title">
-                            Discussion with team about new product launch
-                          </h4>
-                          <p>
-                            meeting with team mates about the launch of new
-                            product. and tell them about new features
-                          </p>
-                          <span class="vertical-timeline-element-date"
-                            >6:00 PM</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="vertical-timeline-item vertical-timeline-element"
-                    >
-                      <div>
-                        <span class="vertical-timeline-element-icon bounce-in">
-                          <i class="badge badge-dot badge-dot-xl badge-primary">
-                          </i>
-                        </span>
-                        <div
-                          class="vertical-timeline-element-content bounce-in"
-                        >
-                          <h4 class="timeline-title text-success">
-                            Discussion with marketing team
-                          </h4>
-                          <p>
-                            Discussion with marketing team about the popularity
-                            of last product
-                          </p>
-                          <span class="vertical-timeline-element-date"
-                            >9:00 AM</span
-                          >
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>

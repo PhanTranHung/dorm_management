@@ -7,8 +7,10 @@ router.get('/bill', function (req, res, next) {
 });
 
 router.get('/rooms/:id', function (req, res, next) {
+  const roomId = req.params.id.split('-');
   res.render('admin/index', {
     page: 'room-detail',
+    data: { roomId: roomId[0] + '-' + roomId[2] },
   });
 });
 

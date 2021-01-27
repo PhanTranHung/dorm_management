@@ -11,15 +11,23 @@
         <div class="card mb-4">
           <div class="card-header">
             <i class="fas fa-chart-bar mr-1"></i>
-            Lượng điện - nước sử dụng tháng này
+            Lượng điện sử dụng mỗi khu
           </div>
           <div class="card-body">
-            <canvas id="bill"></canvas>
+            <canvas id="energybill"></canvas>
           </div>
         </div>
       </div>
       <div class="col-xl-6">
-        <div class="card mb-4"><canvas id="popular"></canvas></div>
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-chart-bar mr-1"></i>
+            Lượng nước sử dụng mỗi khu
+          </div>
+          <div class="card-body">
+            <canvas id="waterbill"></canvas>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -142,64 +150,121 @@
 </div>
 
 <script>
-  const color = { red: 'rgb(255, 99, 132)', blue: 'rgb(54, 162, 235)' };
+  const color = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)',
+  };
 
-  var lineChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'Số điện',
-        borderColor: color.red,
-        backgroundColor: color.red,
-        fill: false,
-        data: [96, 72, 53, 98, 105, 110, 86],
-        yAxisID: 'y-axis-1',
+  const energy = {
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'Khu 1',
+          borderColor: color.red,
+          backgroundColor: color.red,
+          fill: false,
+          data: [365, 452, 369, 412, 405, 395, 455],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Khu 2',
+          borderColor: color.blue,
+          backgroundColor: color.blue,
+          fill: false,
+          data: [450, 463, 482, 426, 492, 472, 465],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Khu 3',
+          borderColor: color.yellow,
+          backgroundColor: color.yellow,
+          fill: false,
+          data: [123, 96, 101, 113, 156, 175, 203],
+          yAxisID: 'y-axis-1',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      hoverMode: 'index',
+      stacked: false,
+      title: {
+        display: false,
+        text: 'Lượng điện - nước đã sử dụng',
       },
-      {
-        label: 'Số nước',
-        borderColor: color.blue,
-        backgroundColor: color.blue,
-        fill: false,
-        data: [25, 30, 26, 28, 32, 31, 20],
-        yAxisID: 'y-axis-1',
+      scales: {
+        yAxes: [
+          {
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'left',
+            id: 'y-axis-1',
+          },
+        ],
       },
-    ],
+    },
+  };
+  const water = {
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'Khu 1',
+          borderColor: color.red,
+          backgroundColor: color.red,
+          fill: false,
+          data: [162, 142, 163, 152, 192, 164, 175],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Khu 2',
+          borderColor: color.blue,
+          backgroundColor: color.blue,
+          fill: false,
+          data: [164, 142, 195, 142, 172, 163, 174],
+          yAxisID: 'y-axis-1',
+        },
+        {
+          label: 'Khu 3',
+          borderColor: color.yellow,
+          backgroundColor: color.yellow,
+          fill: false,
+          data: [92, 96, 78, 86, 92, 89, 92],
+          yAxisID: 'y-axis-1',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      hoverMode: 'index',
+      stacked: false,
+      title: {
+        display: false,
+        text: 'Lượng điện - nước đã sử dụng',
+      },
+      scales: {
+        yAxes: [
+          {
+            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+            display: true,
+            position: 'left',
+            id: 'y-axis-1',
+          },
+        ],
+      },
+    },
   };
 
   window.onload = function () {
-    var ctx = document.getElementById('bill').getContext('2d');
-    window.myLine = Chart.Line(ctx, {
-      data: lineChartData,
-      options: {
-        responsive: true,
-        hoverMode: 'index',
-        stacked: false,
-        title: {
-          display: false,
-          text: 'Lượng điện - nước đã sử dụng',
-        },
-        scales: {
-          yAxes: [
-            {
-              type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-              display: true,
-              position: 'left',
-              id: 'y-axis-1',
-            },
-            // {
-            //   type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-            //   display: true,
-            //   position: 'right',
-            //   id: 'y-axis-2',
-
-            //   // grid line settings
-            //   gridLines: {
-            //     drawOnChartArea: false, // only want the grid lines for one axis to show up
-            //   },
-            // },
-          ],
-        },
-      },
-    });
+    var ctx = document.getElementById('energybill').getContext('2d');
+    window.myLine = Chart.Line(ctx, energy);
+    var ctx = document.getElementById('waterbill').getContext('2d');
+    window.myLine = Chart.Line(ctx, water);
   };
 </script>
