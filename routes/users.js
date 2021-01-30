@@ -18,6 +18,10 @@ router.get('/signup', async function (req, res, next) {
   res.render(userpath, { page: 'signup' });
 });
 
+router.get('/suc', async function (req, res, next) {
+  res.render(userpath, { page: 'suc' });
+});
+
 router.get('/news', async function (req, res, next) {
   const data = await newsService.getAllNews();
   res.render(userpath, { page: 'news', data });

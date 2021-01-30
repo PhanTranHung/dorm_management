@@ -1,94 +1,206 @@
 <div style="margin-top: 160px; padding-left: 200px" class="row">
   <div class="col-3 col-s-12">
     <form action="/action_page.php">
-      <label for="fname">First Name</label>
+      <label for="fname">ĐĂNG KÝ KÝ TÚC XÁ</label>
       <input
+        style="border-radius: 8px; padding: 8px; border-color: #ff8000"
         type="text"
         id="fname"
         name="firstname"
-        placeholder="Your name.."
+        placeholder="Họ và tên*"
       />
 
-      <label for="lname">Last Name</label>
+      <label for="lname"></label>
       <input
+        style="
+          border-radius: 8px;
+          padding: 8px;
+          border-color: #ff8000;
+          margin-top: 30px;
+        "
         type="text"
         id="lname"
         name="lastname"
-        placeholder="Your last name.."
+        placeholder="Mã sinh viên*"
+      />
+      <input
+        style="
+          border-radius: 8px;
+          padding: 8px;
+          border-color: #ff8000;
+          margin-top: 30px;
+        "
+        type="text"
+        id="lname"
+        name="lastname"
+        placeholder="Ngành học*"
       />
 
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-
-      <input type="submit" value="Submit" />
+      <!-- <label for="country">Country</label> -->
     </form>
   </div>
 
   <div class="col-3 col-s-12">
     <form action="/action_page.php">
-      <label for="fname">First Name</label>
+      <!-- <label for="fname">First Name</label> -->
       <input
+        style="
+          border-radius: 8px;
+          padding: 8px;
+          border-color: #ff8000;
+          margin-top: 30px;
+        "
         type="text"
         id="fname"
         name="firstname"
-        placeholder="Your name.."
+        placeholder="Lớp*"
       />
 
-      <label for="lname">Last Name</label>
-      <input
-        type="text"
-        id="lname"
-        name="lastname"
-        placeholder="Your last name.."
-      />
-
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-
-      <input type="submit" value="Submit" />
+      <!-- <label for="lname">Last Name</label> -->
+      <input style=" border-radius: 8px; padding: 8px; border-color: #ff8000;
+      margin-top: 30px; " type="text" id="lname" name="lastname"
+      placeholder=Email.." /> <input style=" border-radius: 8px; padding: 8px;
+      border-color: #ff8000; margin-top: 30px; " type="text" id="lname"
+      name="lastname" placeholder="Số điện thoại*"" />
     </form>
   </div>
 
   <div class="col-3 col-s-12">
-    <form action="/action_page.php">
-      <label for="fname">First Name</label>
+    <label style="margin-top: 30px">Upload ảnh 3x4</label>
+    <input
+      type="file"
+      onchange="readURL(this);"
+      style="margin-top: 10px; boder-radius: 10px"
+    />
+    <img
+      id="blah"
+      src="https://cdn.iconscout.com/icon/free/png-256/avatar-380-456332.png"
+      alt="your image"
+      style="height: 120px; margin-top: 10px"
+    />
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </div>
+  <div class="row">
+    <div>
+      <div class="col-6 col-s-12">
+        <input
+          style="
+            border-radius: 8px;
+            padding: 8px;
+            border-color: #ff8000;
+            width: 300px;
+            margin-left: 10px;
+            margin-top: 20px;
+          "
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Số CMND*"
+        />
+      </div>
+      <div class="col-6 col-s-12">
+        <input
+          style="
+            border-radius: 8px;
+            padding: 8px;
+            border-color: #ff8000;
+            width: 300px;
+            margin-left: 10px;
+            margin-top: 30px;
+          "
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Ngày cấp*"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-s-12">
+      <label style="margin-top: 30px; margin-left: 10px"
+        >Upload ảnh chụp mặt trước CMND</label
+      >
       <input
-        type="text"
-        id="fname"
-        name="firstname"
-        placeholder="Your name.."
+        style="margin-left: 10px"
+        type="file"
+        onchange="readURL(this);"
+        style="margin-top: 10px; boder-radius: 10px"
       />
-
-      <label for="lname">Last Name</label>
+    </div>
+    <div class="col-6 col-s-12">
+      <label style="margin-top: 30px">Upload ảnh chụp mặt sau CMND</label>
       <input
-        type="text"
-        id="lname"
-        name="lastname"
-        placeholder="Your last name.."
+        type="file"
+        onchange="readURL(this);"
+        style="margin-top: 10px; boder-radius: 10px"
       />
-
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-
-      <input type="submit" value="Submit" />
-    </form>
+    </div>
+    <div style="margin-top: 80px; padding-left: 10px" class="row">
+      <div class="col-4 col-s-12">
+        <div class="chontang" style="padding-left: 20px; padding-right: 20px">
+          <label for="country">Chọn khu</label>
+          <select id="country" name="country">
+            <option value="2">A</option>
+            <option value="3">B</option>
+            <option value="4">C</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3 col-s-12">
+        <div class="chontang">
+          <label for="chontang">Chọn tầng</label>
+          <select id="chontang" name="chontang">
+            <option value="2" style="padding-right: 10px">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3 col-s-12">
+        <div class="chontang">
+          <label for="chonphong">Chọn phòng</label>
+          <select id="chonphong" name="chonphong">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="footer">
-  <p>
-    Resize the browser window to see how the content respond to the resizing.
-  </p>
-</div>
+<button
+  style="font-family: arial; background-color: #FF8000; /* Green */
+border: none;
+color: white;
+padding: 20px;
+text-align: center;
+margin-left: 310px !important;
+margin-top: 30px !important;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 10px;
+}"
+>
+  <a href="suc">Đăng ký</a>
+</button>
